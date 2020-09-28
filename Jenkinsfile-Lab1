@@ -36,6 +36,9 @@ pipeline {
                             pipenv install django
                             pipenv run pip install newsapi-python
                             pipenv run pip install cryptography
+                            pipenv run pip install sqlite3
+                            pipenv run pip install base64
+                            pipenv run pip install sys
                             pipenv run python generate_secret.py
                             pipenv run python manage.py migrate --run-syncdb
                             pipenv run python manage.py test || exit -1
